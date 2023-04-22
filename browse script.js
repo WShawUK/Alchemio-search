@@ -1,3 +1,11 @@
+//nav redirect
+document.getElementById('nav-div').firstElementChild.children[1].addEventListener('click', () => {
+    window.location = 'https://wshawuk.github.io/Alchemio-search/'
+})
+document.getElementById('nav-div').firstElementChild.children[0].addEventListener('click', () => {
+    window.location = 'https://wshawuk.github.io/Alchemio/'
+})
+
 // ascend descend button
 const ascendDescendButton = document.getElementById('ascend-descend-button')
 let sortDirectionIsAscending = false
