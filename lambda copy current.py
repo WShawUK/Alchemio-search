@@ -4,10 +4,10 @@ import pymysql
 import json
 
 # rds settings
-rds_host = "alchemio-mysql.cjjtf6hozyqq.eu-north-1.rds.amazonaws.com"
-user_name = "admin"
-password = "alchemiopassword"
-db_name = "alchemio"
+rds_host = '' # hidden for security
+user_name = '' # hidden for security
+password = '' # hidden for security
+db_name = '' # hidden for security
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
