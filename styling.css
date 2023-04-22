@@ -111,14 +111,14 @@ header h1{
     font-family: 'Tilt Prism', cursive;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 600px) {
     #nav-div div:nth-of-type(1) .ionicon{
         width: 60px;
         height: 60px;
     }
 
     header h1{
-        font-size: 8vh;
+        font-size: 6vh;
     }
 }
 
@@ -1018,8 +1018,3 @@ header h1{
     right: 1px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
 }
-
-
-
-
-
