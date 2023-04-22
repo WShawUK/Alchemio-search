@@ -1,0 +1,1024 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+p {
+    color: white;
+}
+
+body {
+    --colour-1: #6e3667;
+    --colour-2: #88d317;
+    --colour-3: #1a0315;
+    --colour-4: #535353;
+    --colour-5: #a03529;
+
+
+    background-color: var(--colour-3);
+}  
+
+header {
+    position: relative;
+    height: 25vh;
+    width: 100%;
+    background-color: var(--colour-1);
+    z-index: 1;
+}
+
+
+#header-image-container {
+    position: absolute;
+    height: 100%;
+
+    right: 0;
+}
+
+#header-image-container::before {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background-image: linear-gradient(to left, rgba(110, 54, 103, 0), rgba(110, 54, 103, 1) 50vw);
+}
+
+#header-image-container img{
+    height: 100%;
+    width: auto;
+    opacity: 1;
+    z-index: 2;
+}
+
+#nav-div {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    z-index: 1;
+}
+
+#nav-div div:nth-of-type(1) .ionicon{
+    position: relative;
+
+    width: 10vh;
+    height: 10vh;
+    max-width: 120px;
+    max-height: 120px;
+    margin-right: 20px;
+
+    transition: 0.5s;
+}
+
+#nav-div div:nth-of-type(1) .ionicon:hover{
+    cursor: pointer;
+
+    fill: var(--colour-2);
+    color: var(--colour-2);
+    filter: drop-shadow(0 0 20px var(--colour-2));
+}
+
+
+
+#nav-div div:nth-of-type(2){
+    margin-left: auto;
+}
+
+#nav-div div:nth-of-type(2) .ionicon{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    transition: 0.5s;
+}
+
+#nav-div div:nth-of-type(2) .ionicon:hover{
+    fill: var(--colour-2);
+    color: var(--colour-2);
+    filter: drop-shadow(0 0 20px var(--colour-2));
+}
+
+header h1{
+    position: relative;
+    font-size: 10vh;
+    z-index: 3;
+    pointer-events: none;
+
+    color: var(--colour-2);
+    text-shadow: 0 0 15px var(--colour-2);
+
+    font-family: 'Tilt Prism', cursive;
+}
+
+@media screen and (max-width: 900px) {
+    #nav-div div:nth-of-type(1) .ionicon{
+        width: 60px;
+        height: 60px;
+    }
+
+    header h1{
+        font-size: 8vh;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+#searchbox-div {
+    border: 1px var(--colour-2) solid;
+    background-color: var(--colour-1);
+    width: 50%;
+    margin: 20px auto;
+    padding: 0 5px 5px 5px;
+
+
+}
+
+#searchbox-div h4{
+    font-size: 40px;
+    text-align: left;
+    color: var(--colour-2);
+    
+}
+
+#searchbox-div input{
+    margin: 5px;
+    padding-left: 4px;
+
+    border: 1px solid var(--colour-2);
+    background-color: var(--colour-4);
+    font-size: 30px;
+    color: white;
+
+    height: 40px;
+    width: 90%;
+}
+
+#searchbox-div input:focus{
+    outline: 0;
+    box-shadow: 0 0 10px var(--colour-2);
+}
+
+
+
+
+#searchbox-div #search-options-div {
+    margin: 10px auto 10px 0;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto auto;
+    width: max-content;
+    height: auto;
+}
+
+#searchbox-div #search-options-div h6{
+    margin: 10px auto 10px 5px;
+    font-size: 20px;
+    text-align: left;
+    color: var(--colour-2);
+
+    grid-row: 1/2;
+    grid-column: 1/3;
+}
+
+
+#searchbox-div #search-options-div ul{
+    /* padding: 5px; */
+    border: 1px solid var(--colour-2);
+    width: max-content;
+    color: white;
+    background-color: var(--colour-3);
+    list-style-type: none;
+
+    grid-row: 2/4;
+    grid-column: 1/2;
+    
+}
+
+#searchbox-div #search-options-div ul li{
+    padding: 5px;
+    font-size: 20px;
+    height: 20px;
+    cursor: pointer;
+
+    transition: 0.5s;
+}
+
+#searchbox-div #search-options-div ul li:hover{
+    color: black;
+    background-color: var(--colour-2);
+}
+
+.sort-option-selected {
+    color: black;
+    background-color: var(--colour-2);
+}
+
+#searchbox-div #search-options-div #ascend-descend-button{
+    width: 50px;
+    height: 50px;
+
+    background-color: var(--colour-1);
+    border: outset 1px var(--colour-2);
+    box-shadow: 0px 5px 0px var(--colour-4);
+
+    grid-row: 2/3;
+    grid-column: 2/3;
+}
+
+#searchbox-div #search-options-div #ascend-descend-button:active{
+    position: relative;
+    bottom: -5px;
+    box-shadow: none;
+}
+
+#searchbox-div #search-options-div #ascend-descend-button svg{
+    transform: none;
+    fill: var(--colour-2);
+}
+
+#searchbox-div #search-options-div #ascend-descend-button .ascending{
+    transform: rotate(180deg) scale(-1,1);
+}
+
+#searchbox-div #search-options-div #search-button{
+    grid-row: 2/3;
+    grid-column: 3/4;
+
+    width: 70%;
+    height: 50px;
+
+    background-color: var(--colour-1);
+    border: outset 1px var(--colour-2);
+    box-shadow: 0px 5px 0px var(--colour-4);
+    font-size: 25px;
+
+    align-items: start;
+    
+}
+
+#searchbox-div #search-options-div #search-button svg{
+    height: 100%;
+    width: 100%;
+    color: var(--colour-2);
+}
+
+#searchbox-div #search-options-div #search-button:active{
+    position: relative;
+    bottom: -5px;
+    box-shadow: none;
+}
+
+
+#searchbox-div #search-options-div div{
+    grid-row: 3/4;
+    grid-column: 2/4;
+
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+#searchbox-div #search-options-div div h6{
+    grid-row: 1/2;
+}
+
+#searchbox-div #search-options-div div input{
+    grid-row: 2/3;
+    width: 30vw;
+    height: 10%;
+
+    appearance: none;
+    background-color: var(--colour-4);
+}
+
+#searchbox-div #search-options-div div input::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--colour-2);
+    background-color: var(--colour-1);
+}
+
+#searchbox-div #search-options-div div input::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--colour-2);
+    border-radius: 50%;
+    background-color: var(--colour-1);
+}
+
+
+@media screen and (max-width: 1100px) {
+    #searchbox-div {
+        width: 95%;
+    }
+    #searchbox-div #search-options-div div input{
+        width: 50vw;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#explanation-div {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    width: 50%;
+    word-wrap: break-word;
+    margin: 10px auto;
+
+    max-height: 400px;
+    transition: 1s;
+}
+
+#explanation-div img{
+    all: unset;
+
+    width: 20px;
+    height: 20px;
+    max-width: 80%;
+
+    border: 1px solid white;
+
+    
+}
+
+#explanation-div svg{
+    color: white;
+    pointer-events: none;
+}
+
+#explanation-div p {
+    grid-row: 2/3;
+    color: white;
+    font-size: 30px;
+    margin: 0 20px 20px 20px;
+}
+
+
+
+
+
+
+
+
+
+#prompt-of-the-day {
+    display: grid;
+    grid-template-rows: auto auto;
+
+    margin: 20px auto;
+    width: 50%;
+    border: 1px solid var(--colour-2);
+
+    background-color: var(--colour-5);
+}
+
+#prompt-of-the-day div{
+    background-color: var(--colour-3);
+}
+
+#prompt-of-the-day h3{
+    color: var(--colour-2);
+    padding: 10px;
+    font-size: 50px;
+    text-align: center;
+}
+
+#prompt-of-the-day p{
+    font-size: 30px;
+    margin: 30px;
+}
+
+@media screen and (max-width: 1100px) {
+    #prompt-of-the-day {
+        width: 90%;
+    }
+
+    #explanation-div {
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
+
+
+#enter-recipe-box {
+    /* border: 1px var(--colour-2) solid; */
+    margin: 100px auto 50px auto;
+    width: 50%;
+    /* height: 90vh; */
+}
+
+#enter-recipe-box h2{
+    color: white;
+    text-align: center;
+    margin: 10px;
+    font-size: 40px;
+}
+
+#enter-recipe-box form{
+    border: 1px var(--colour-2) solid;
+    border-bottom: none;
+    background-color: var(--colour-1);
+    width: 100%;
+    height: 90%;
+
+    display: grid;
+    grid-template-rows: auto auto auto;
+
+    padding: 5px 0 20px 0;
+}
+
+#enter-recipe-box form h4{
+    margin: auto 0 auto 10px;
+    color: white;
+    font-size: 30px;
+}
+
+#enter-recipe-box form ol{
+    width: 90%;
+    margin: 10px;
+    padding-left: 7px;
+
+    font-size: 20px;
+    color: white;
+    background-color: var(--colour-4);
+    border: 1px solid var(--colour-2);
+
+    word-break: break-all;
+}
+
+#enter-recipe-box form ol li{
+    margin-left: 25px;
+    padding: 2px;
+}
+
+#enter-recipe-box form ol:focus {
+    outline: 0;
+    box-shadow: 0 0 10px var(--colour-2);
+}
+
+
+
+
+
+
+#enter-recipe-box form input{
+    resize: none;
+    color: white;
+    background-color: var(--colour-4);
+    border: 1px solid var(--colour-2);
+
+    width: 90%;
+    height: 25px;
+    margin: 10px;
+    font-size: 25px;
+    padding: 5px;
+}
+
+#enter-recipe-box form input:focus {
+    outline: 0;
+    box-shadow: 0 0 10px var(--colour-2);
+}
+
+#enter-recipe-box form div:nth-of-type(4) input{
+    height: 18px;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 1100px) {
+    #enter-recipe-box {
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+#enter-recipe-box #submit-recipe-box{
+    border-radius: 0 0 50px 50px;
+    border: 1px var(--colour-2) solid;
+    border-top: none;
+    background-color: var(--colour-5);
+    width: 100%;
+    height: 70px;
+
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#enter-recipe-box #submit-recipe-box input{
+    height: 50%;
+    font-size: 30px;
+    width: 90%;
+    margin: auto auto auto 20%;
+
+    color: white;
+    background-color: var(--colour-4);
+    border: 1px solid var(--colour-2);
+    padding: 5px;
+}
+
+#enter-recipe-box #submit-recipe-box input:focus{
+    outline: none;
+    box-shadow: 0 0 10px var(--colour-2);
+}
+
+#enter-recipe-box #submit-recipe-box button{
+    background-color: var(--colour-1);
+    border: outset 1px var(--colour-2);
+
+    height: 50px;
+    width: 70px;
+    margin: auto 30px auto auto;
+
+    color: var(--colour-2);
+    font-size: 15px;
+
+    box-shadow: 0px 5px 0px var(--colour-4);
+}
+
+@media screen and (max-width: 600px) {
+    #enter-recipe-box #submit-recipe-box input{
+        width: 70%;
+        font-size: 14px;
+        height: 30%;
+    }
+}
+
+#enter-recipe-box #submit-recipe-box button:active{
+    position: relative;
+    bottom: -5px;
+    box-shadow: none;
+}
+
+#enter-recipe-box #submit-recipe-box button svg{
+    width: 90%;
+    height: 90%;
+    color: var(--colour-2);
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+
+#new-recipes-div {
+    width: 50%;
+    /* height: 100vh; */
+
+    /* border: 1px solid blue; */
+    margin: 30px auto;
+}
+
+@media screen and (max-width: 1100px) {
+    #new-recipes-div {
+        width: 95%;
+    }
+}
+  
+
+#new-recipes-div h3{
+    font-size: calc(35px + 1.5vw);
+
+    color: white;
+    text-align: center;
+}
+
+#new-recipes-div #all-new-recipes {
+    width: 100%;
+    /* height: 90%; */
+
+    /* border: 1px solid red; */
+    margin-top: 10px;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+#new-recipes-div .shown-recipe {
+    width: 100%;
+
+    border: 1px solid var(--colour-2);
+    margin: 40px auto;
+
+    display: none;
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-initial{
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: auto auto auto;
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-initial h6{
+    font-size: 20px;
+    margin: 2px auto auto 5px;
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-initial h3{
+    font-size: calc(30px + 1.5vw);
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-initial > div{
+    width: 100%;
+    height: 25px;
+    border-top: 1px var(--colour-2) solid;
+    border-bottom: 1px var(--colour-2) solid;
+
+    display: flex;
+    overflow: hidden;
+}
+
+
+#new-recipes-div .shown-recipe .shown-recipe-initial p{
+    font-size: 20px;
+    margin: auto 10px;
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-initial > div div{
+    display: flex;
+    margin: 0 0 0 3%;
+    align-self: center;
+
+    min-width: 65px;
+
+    overflow: hidden;
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-initial > div div svg{
+    height: 20px;
+    width: 20px;
+    flex-shrink: 0;
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-initial > div div p{
+    margin: 0 0 0 2px;
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-initial > div .tags-reader{
+    min-width: 30px;
+    height: 25px;
+    font-size: 15px;
+}
+
+
+
+#new-recipes-div .shown-recipe .shown-recipe-initial div .upvote-button-container{
+    width: 20px;
+    height: 20px;
+    margin: 0 0 0 5px;
+
+    position: relative;
+    overflow: visible;
+}
+
+
+
+#new-recipes-div .shown-recipe .shown-recipe-initial div .upvote-button-container .upvote-button{
+    width: 20px;
+    height: 20px;
+    fill: var(--colour-4);
+    cursor: pointer;
+
+    transition: fill 0.4s;
+    /* animation: upvote-button-ebb 3s infinite; */
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-initial div .upvote-button:hover{
+    fill: var(--colour-2);
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-initial div .upvote-button-container .upvote-button *{
+    pointer-events: none;
+
+}
+
+.upvote-button-container .upvote-button-ghost {
+    pointer-events: none;
+
+    color: var(--colour-2);
+    fill: var(--colour-2);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+
+    transform-origin: center;
+    opacity: 0;
+
+    animation: upvote-button-ghost-animation 1s 1 forwards;
+
+}
+
+@keyframes upvote-button-ghost-animation {
+    from {
+        opacity: 1;
+        scale: 1;
+    }
+    to {
+        opacity: 0;
+        scale: 2.5;
+    }
+}
+
+/* ebbs to draws the eye to upvote button. idk about this though */
+/* @keyframes upvote-button-ebb {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+} */
+
+
+
+
+#new-recipes-div .shown-recipe .expand-button {
+    width: 20px;
+    height: 20px;
+    margin: auto 3px auto auto;
+
+    background-color: var(--colour-2);
+    border-radius: 50%;
+    transition: transform 1s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#new-recipes-div .shown-recipe .shown-recipe-main-details {
+    width: 100%;
+    height: 0px;
+
+    overflow: hidden;
+
+    transition: height 1s;
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-main-details h4 {
+    font-size: 30px;
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-main-details p {
+    font-size: 20px;
+    border: 1px var(--colour-2) solid;
+    padding: 5px;
+    word-wrap: break-word;
+}
+
+/* ingredients */
+#new-recipes-div .shown-recipe .shown-recipe-main-details>:nth-child(1){
+    background-color: var(--colour-1);
+    border: 1px var(--colour-2) solid;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* instructions */
+#new-recipes-div .shown-recipe .shown-recipe-main-details>:nth-child(2){
+    background-color: var(--colour-1);
+    border: 1px var(--colour-2) solid;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* lower bar with button */
+#new-recipes-div .shown-recipe .shown-recipe-main-details>:nth-child(3){ 
+    display: flex;
+    border-top: 1px var(--colour-2) solid;
+    border: 1px var(--colour-2) solid;
+
+    width: 100%;
+    height: 25px;
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-main-details>:nth-child(3) svg{
+    margin: auto 0px auto 5px;
+    width: 20px;
+    height: 20px;
+
+    fill: white;
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-main-details>:nth-child(3) p{
+    overflow: visible;
+    height: auto;
+    border: none;
+
+    font-size: 20px;
+    padding: 0;
+    margin: auto auto auto 5px;
+}
+
+
+
+
+
+
+
+
+
+#new-recipes-div .shown-recipe .shown-recipe-comments{
+    overflow: hidden;
+    width: 100%;
+    height: 0px;
+
+    transition: height 1s;
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-comments .recipe-comment{
+    margin: 10px auto;
+    padding: 0 5px 5px 5px;
+
+    width: 90%;
+
+    background-color: var(--colour-1);
+    border: 1px var(--colour-2) solid;
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-comments .recipe-comment h5{
+    font-size: 22px;
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-comments .recipe-comment p{
+    font-size: 20px;
+    word-wrap: break-word;
+}
+
+
+
+
+
+
+
+
+
+
+#new-recipes-div .shown-recipe .shown-recipe-comments .submit-comment-box{
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-comments .submit-comment-box textarea{
+    border: 1px solid var(--colour-2);
+    border-bottom: none;
+
+    margin: 1px auto 0 auto;
+    width: 99%;
+    height: 150px;
+    resize: none;
+    background-color: var(--colour-4);
+    padding: 5px;
+
+    font-size: 25px;
+    color: white;
+    z-index: 2;
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-comments .submit-comment-box textarea:focus {
+    outline: 0;
+    box-shadow: 0 0 10px var(--colour-2);
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-comments .submit-comment-box div{
+    margin: 0 auto;
+    width: calc(100% + 2px);
+    height: 60px;
+    background-color: var(--colour-5);
+
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+
+    border: 1px solid var(--colour-2);
+
+    display: flex;
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-comments .submit-comment-box div input{
+    margin: auto 20px;
+    border: 1px solid var(--colour-2);
+    height: 40%;
+    width: 50%;
+    align-self: center;
+    padding: 5px;
+    font-size: 20px;
+    background-color: var(--colour-4);
+    color: white;
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-comments .submit-comment-box div input:focus{
+    outline: 0;
+    box-shadow: 0 0 10px var(--colour-2);
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-comments .submit-comment-box div button{
+    margin: auto 40px auto auto;
+    height: 40px;
+    width: 60px;
+    align-self: center;
+
+    background-color: var(--colour-1);
+    border: outset 1px var(--colour-2);
+
+    box-shadow: 0px 5px 0px var(--colour-4);
+
+    font-size: 11px;
+    color: var(--colour-2);
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-comments .submit-comment-box div button:active{
+    position: relative;
+    bottom: -5px;
+    box-shadow: none;
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-comments .submit-comment-box div button svg{
+    width: 100%;
+    height: 100%;
+    color: var(--colour-2);
+    pointer-events: none;
+}
+
+
+
+
+/* temp */
+#speed-button {
+    background-color: transparent;
+    border: outset 1px grey;
+    grid-row: 3/4;
+    width: 3rem;
+    height: 2rem;
+    margin: auto;
+    margin-right: 10px;
+}
+
+#options-div button:active {
+    position: relative;
+    bottom: 1px;
+    right: 1px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
