@@ -641,7 +641,7 @@ header h1{
     padding-top: 5px;
     margin: 40px auto;
 
-    /* display: none; */
+    display: none;
 }
 
 #new-recipes-div .shown-recipe .shown-recipe-initial{
