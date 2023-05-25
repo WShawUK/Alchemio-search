@@ -788,6 +788,8 @@ header h1{
     background-color: var(--colour-2);
     border-radius: 50%;
     transition: transform 1s;
+
+    cursor: pointer;
 }
 
 
@@ -853,6 +855,11 @@ header h1{
     height: 20px;
 
     fill: white;
+    cursor: pointer;
+}
+
+#new-recipes-div .shown-recipe .shown-recipe-main-details>:nth-child(3) svg *{
+    pointer-events: none;
 }
 
 #new-recipes-div .shown-recipe .shown-recipe-main-details>:nth-child(3) p{
